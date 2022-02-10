@@ -2,9 +2,9 @@ $color-primary: #292c3f;
 $color-grad-1: #136124;
 $color-grad-2: #dad299;
 
-$color-grey-light-1: #ffefa9; // Light background
-$color-grey-light-2: #fcd949; // Light lines
-$color-grey-light-3: #f6d445; // Light text (placeholder)
+$color-grey-light-1: #ffefba; // Light background
+$color-grey-light-2: #ddefbb; // Light lines
+$color-grey-light-3: #b0dab9; // Light text (placeholder)
 $color-grey-dark-1: #292c3f; // Normal text
 $color-grey-dark-2: #4b740d; // Lighter text
 
@@ -40,7 +40,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-1;
-  background-image: $gradient;
+  background: linear-gradient(to right, #ece9e6, #ddefbb);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
