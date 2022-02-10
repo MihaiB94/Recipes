@@ -29,6 +29,5 @@
     "url": "https://github.com/MihaiB94/recipesearch/issues"
   },
   "homepage": "https://github.com/MihaiB94/recipesearch#readme",
-  "description": "Recipe aplication with custom recipe uploads",
-  "main": "index.html"
+  "description": "Recipe aplication with custom recipe uploads"
 }
