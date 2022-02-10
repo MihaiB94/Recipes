@@ -1,6 +1,8 @@
+import { async } from 'regenerator-runtime';
 import { API_URL, RES_PER_PAGE, KEY } from './config.js';
-// import { getJSON, sendJSON } from './helpers.js';
+
 import { AJAX } from './helpers.js';
+
 export const state = {
   recipe: {},
   search: {
@@ -44,10 +46,10 @@ export const loadRecipe = async function (id) {
   }
 };
 
-//search
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
+
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
     console.log(data);
 
@@ -57,11 +59,12 @@ export const loadSearchResults = async function (query) {
         title: rec.title,
         publisher: rec.publisher,
         image: rec.image_url,
+        ...(rec.key && { key: rec.key }),
       };
     });
     state.search.page = 1;
   } catch (err) {
-    console.error(`${err} 💣`);
+    console.error(`${err} 💥💥💥💥`);
     throw err;
   }
 };
@@ -69,8 +72,8 @@ export const loadSearchResults = async function (query) {
 export const getSearchResultsPage = function (page = state.search.page) {
   state.search.page = page;
 
-  const start = (page - 1) * state.search.resultsPerPage; //0;
-  const end = page * state.search.resultsPerPage; //9
+  const start = (page - 1) * state.search.resultsPerPage; // 0
+  const end = page * state.search.resultsPerPage; // 9
 
   return state.search.results.slice(start, end);
 };
@@ -78,7 +81,7 @@ export const getSearchResultsPage = function (page = state.search.page) {
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach(ing => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
-    // newQt = oldQt * newServings / oldServings // 2* 8 / 4 = 4
+    // newQt = oldQt * newServings / oldServings // 2 * 8 / 4 = 4
   });
 
   state.recipe.servings = newServings;
@@ -113,7 +116,6 @@ const init = function () {
   const storage = localStorage.getItem('bookmarks');
   if (storage) state.bookmarks = JSON.parse(storage);
 };
-
 init();
 
 const clearBookmarks = function () {
