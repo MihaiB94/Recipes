@@ -1,0 +1,34 @@
+{
+  "moduleNameMapper": {
+    "^url:(.*)+$": "$1"
+  },
+  "name": "forkify",
+  "version": "1.0.0",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1",
+    "sass": "^1.44.0"
+  },
+  "dependencies": {
+    "core-js": "^3.21.0",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaiB94/recipesearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MihaiB94/recipesearch/issues"
+  },
+  "homepage": "https://github.com/MihaiB94/recipesearch#readme",
+  "description": "Recipe aplication with custom recipe uploads",
+  "main": "index.js"
+}
