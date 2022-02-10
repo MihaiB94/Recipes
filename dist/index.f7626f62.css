@@ -666,5 +666,6 @@ body {
 .upload__btn {
   grid-column: 1/-1;
   justify-self: center;
+  background-color: #4b740d;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */
